@@ -39,7 +39,6 @@ const Main = () => {
             let option = data.option;
             console.log(option);
             if (option == 'View All Departments?') {
-                //console.log("view depts");
                 viewDepartments();
             } else if (option == 'View All Roles?') {
                 viewRoles();
@@ -54,9 +53,7 @@ const Main = () => {
             } else if (option == 'Update an Employee Role?') {
                 updateRole()
             } else if (option == 'Quit') {
-                Quit();
-            } else {
-                console.log("Uh Oh, You have hit a dead end! Try another selection")
+                Quit()
             }
         });
 }
@@ -90,6 +87,7 @@ function viewEmployees() {
         Main();
     });
 }
+
 
 // Add a department
 
@@ -259,5 +257,7 @@ db.query(`SELECT employees.id, employees.first_name, employees.last_name, roles.
 // Auto quit!
 
 function Quit() { process.exit(1);}
+
+// start the app
 
 Main();
