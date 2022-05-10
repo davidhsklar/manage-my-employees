@@ -1,0 +1,22 @@
+{
+  "name": "manage-employees",
+  "version": "1.0.0",
+  "description": "a CLI app and tracks a employee database",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davidhsklar/manage-my-employees.git"
+  },
+  "author": "David Sklar",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/davidhsklar/manage-my-employees/issues"
+  },
+  "homepage": "https://github.com/davidhsklar/manage-my-employees#readme",
+  "dependencies": {
+    "jest": "^28.1.0"
+  }
+}
