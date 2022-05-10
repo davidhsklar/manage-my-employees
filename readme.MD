@@ -1,0 +1,1 @@
+## This is a CLI application that uses mySQL, Node and Inquirer to set up and manage a employee database.
