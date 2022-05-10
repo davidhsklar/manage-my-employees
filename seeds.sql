@@ -1,27 +1,28 @@
 USE employee_management
-INSERT INTO department (dept_name)
-VALUES ("Accouting"),
-       ("Legal"),
-       ("Sales"),
-       ("Operations"),
-       ("Marketing");
+
+INSERT INTO department (dept_name, id)
+VALUES ("Accouting", 1),
+       ("Legal", 2),
+       ("Sales", 3),
+       ("Operations", 4),
+       ("Marketing", 5);
 
 INSERT INTO roles (title, salary, department_id)
-VALUES ("Account Manager", 170000, 1),
-       ("Legal Eagle", 110000, 2),
-       ("Sales Leader", 130000, 3),
-       ("Ops Manager", 190000, 4),
-       ("Marketing Lead", 100000, 5),
-       ("Accountant", 141000, 6),
-       ("Other Accountant", 110000, 7),
-       ("Software Engineer", 125000, 8);
+VALUES ("Account Manager", 170000, null),
+       ("Legal Eagle", 110000, null),
+       ("Sales Leader", 130000, null),
+       ("Ops Manager", 190000, null),
+       ("Marketing Lead", 100000, null),
+       ("Accountant", 141000, null),
+       ("Other Accountant", 110000, null),
+       ("Software Engineer", 125000, null);
 
 INSERT INTO employees (first_name, last_name, roles_id, manager_id)
-VALUES ("Gary", "Trent", 3, 4),
+VALUES ("Gary", "Trent", 1, null),
        ("Nick", "Nurse", 2, null),
        ("Kyle", "Lowry", 3, null),
        ("Pascal", "Siakam", 4, null),
-       ("Fred", "VanVleet", 5, 1),
-       ("OG", "Ananouby", 6, null),
-       ("Khem", "Birch", 7, null),
-       ("Scottie", "Barnes", 8, 8);
+       ("Fred", "VanVleet", 5, null),
+       ("OG", "Ananouby", 3, null),
+       ("Khem", "Birch", 4, null),
+       ("Scottie", "Barnes", 5, null);
