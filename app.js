@@ -15,7 +15,9 @@ const db = mysql.createConnection(
     console.log(`Connected to the database on port ${PORT}`)
 );
 
-const Prompt = () => {
+// Inital inquirer prompt
+
+const Main = () => {
     inquirer
         .prompt([
             {
@@ -64,7 +66,7 @@ function viewDepartments() {
     db.query('SELECT * FROM department', function (err, results) {
         if (err) throw error;
         console.table(results);
-        Prompt();
+        Main();
     });
 }
 
@@ -72,7 +74,7 @@ function viewRoles() {
     db.query('SELECT * FROM roles', function (err, results) {
         if (err) throw error;
         console.table(results);
-        Prompt();
+        Main();
     });
 }
 
@@ -80,7 +82,7 @@ function viewEmployees() {
     db.query('SELECT * FROM employees', function (err, results) {
         if (err) throw error;
         console.table(results);
-        Prompt();
+        Main();
     });
 }
 
@@ -99,7 +101,7 @@ function addDepartment() {
             function (err) {
                 if (err) throw err
                 console.table(data);
-                Prompt();
+                Main();
             }
         )
 
@@ -137,7 +139,7 @@ function addRole() {
                 function (err) {
                     if (err) throw err
                     console.log("Success!");
-                    Prompt();
+                    Main();
                 }
             )
 
@@ -186,7 +188,7 @@ function addWorker() {
                 function (err) {
                     if (err) throw err
                     console.table(data);
-                    Prompt();
+                    Main();
                 }
             )
 
@@ -231,7 +233,7 @@ db.query(`SELECT employees.id, employees.first_name, employees.last_name, roles.
             (err,results) => {
                 if (err) console.log(err)
                 else console.log('Employee Update was Successful\r\n')
-                Prompt();
+                Main();
             }
                     
         )
@@ -239,6 +241,6 @@ db.query(`SELECT employees.id, employees.first_name, employees.last_name, roles.
     });}
 
 
-function Quit() { process.exit }
+function Quit() { process.exit(1);}
 
-Prompt();
+Main();
